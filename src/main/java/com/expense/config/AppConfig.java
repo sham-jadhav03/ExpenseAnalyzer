@@ -23,7 +23,7 @@ public class AppConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/expense_db?useSSL=false&allowPublicKeyRetrieval=true");
         dataSource.setUsername("root");
-        dataSource.setPassword("password");
+        dataSource.setPassword("sham@1234");
         return dataSource;
     }
 

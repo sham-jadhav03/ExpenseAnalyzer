@@ -1,0 +1,6 @@
+com\expense\config\AppConfig.class
+com\expense\config\WebConfig.class
+com\expense\controller\ExpenseController.class
+com\expense\dao\ExpenseDAO.class
+com\expense\model\Expense.class
+com\expense\config\WebAppInitializer.class
