@@ -1,71 +1,82 @@
-# Personal Expense Analyzer
+# 💸 Personal Expense Analyzer
 
-A simple, Java-based web application for tracking daily expenses, built with Spring MVC, Hibernate, and JSP.
+A premium, Java-based web application for tracking daily expenses, built with **Spring MVC 6**, **Hibernate 6**, and **JSP**.
 
 ## 🚀 Overview
-The **Personal Expense Analyzer** helps users record their daily spending, view expense history, and generate simple insights. It features auto-categorization and rule-based saving suggestions to help users manage their finances better.
+The **Personal Expense Analyzer** provides a sophisticated platform to record daily spending, visualize expense history, and gain financial insights. It leverages auto-categorization and intelligent saving suggestions to help you take control of your finances.
 
 ---
 
 ## 🛠 Features
-- **Add Expense**: Record amount, category, description, and date.
-- **Auto-Categorization**: Automatically assigns categories based on keywords in the description (e.g., "pizza" → Food, "bus" → Travel).
-- **View Expenses**: A complete tabular view of all recorded expenses with delete functionality.
-- **Spending Insights**:
-    - Total monthly expense calculation.
+- **✨ Seamless Add Expense**: Quick entry for amount, category, description, and date.
+- **🏷 Smart Auto-Categorization**: Intelligently assigns categories based on keywords (e.g., "burger" -> **Food**, "fuel" -> **Travel**).
+- **📋 Detailed History**: A clean, tabular view of all transactions with easy deletion.
+- **📊 Financial Insights**:
+    - Real-time monthly total calculation.
     - Category-wise spending breakdown.
-    - Smart saving suggestions (e.g., high food spending alerts).
-- **Clean UI**: Simple, responsive design using Vanilla CSS.
+    - AI-driven saving suggestions based on spending patterns.
+- **🎨 Premium UI**: A modern, dark-themed interface with glassmorphism and smooth transitions.
+
+---
+
+## 📸 Screenshots
+
+| Add Expense | View History | Financial Summary |
+| :---: | :---: | :---: |
+| ![Add Expense](./screenshots/add_expense.png) | ![View History](./screenshots/view_expenses.png) | ![Summary](./screenshots/summary.png) |
+
+---
+
+## 🛣 API Endpoints
+
+The application exposes the following web endpoints managed by `ExpenseController`:
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/` | Home page (Redirects to `/add`) |
+| `GET` | `/add` | Displays the form to add a new expense |
+| `POST` | `/save` | Persists a new expense with auto-categorization logic |
+| `GET` | `/view` | Displays the list of all recorded expenses |
+| `GET` | `/delete/{id}` | Deletes a specific expense by its unique ID |
+| `GET` | `/summary` | Displays monthly totals, category breakdown, and suggestions |
 
 ---
 
 ## 💻 Tech Stack
 - **Backend**: Java 17+, Spring Framework 6 (MVC), Hibernate 6 (ORM).
-- **Frontend**: JSP, HTML, CSS (Vanilla).
-- **Database**: MySQL.
+- **Frontend**: JSP, HTML5, CSS3 (Vanilla).
+- **Database**: MySQL 8.0.
 - **Server**: Apache Tomcat 10+ (Jakarta EE).
 - **Build Tool**: Maven.
 
 ---
 
-## ⚙️ How to Run on Local Machine
+## ⚙️ Installation & Setup
 
 ### 1. Prerequisites
-Ensure you have the following installed:
-- **Java Development Kit (JDK 17 or higher)**
-- **Apache Maven**
-- **MySQL Server**
-- **Apache Tomcat 10.x**
+- **JDK 17+**
+- **Maven 3.8+**
+- **MySQL 8.0**
+- **Tomcat 10.x**
 
-### 2. Database Setup
-1. Open your MySQL client (e.g., MySQL Workbench or Command Line).
-2. Run the SQL script located in `db/schema.sql` to create the database and the required tables.
-   ```sql
-   -- This will create 'expense_db' and the 'expenses' table
-   ```
+### 2. Database Initialization
+Execute the schema script to set up your environment:
+```sql
+SOURCE db/schema.sql;
+```
 
-### 3. Project Configuration
-1. Open the project in your IDE (IntelliJ, Eclipse, or VS Code).
-2. Locate `src/main/java/com/expense/config/AppConfig.java`.
-3. Update the database credentials on lines 45-46 if they differ from your setup:
-   ```java
-   dataSource.setUsername("root");
-   dataSource.setPassword("your_password"); // Ensure this matches your MySQL password
-   ```
+### 3. Configuration
+Update your database credentials in `src/main/java/com/expense/config/AppConfig.java`:
+```java
+dataSource.setUsername("your_username");
+dataSource.setPassword("your_password");
+```
 
-### 4. Build the Project
-Open a terminal in the project root directory and run:
+### 4. Build & Deploy
 ```bash
 mvn clean package
 ```
-This will generate an `expense.war` file in the `target/` directory.
-
-### 5. Deploy to Tomcat
-1. Copy the `expense.war` file from the `target/` folder.
-2. Paste it into the `webapps/` folder of your Tomcat installation.
-3. Start the Tomcat server.
-4. Access the application in your browser at:
-   `http://localhost:8080/expense/`
+Deploy the resulting `expense.war` from `target/` to your Tomcat `webapps/` directory.
 
 ---
 
@@ -73,18 +84,19 @@ This will generate an `expense.war` file in the `target/` directory.
 ```text
 PersonalExpenseAnalyzer/
 ├── src/main/java/com/expense/
-│   ├── config/      # Spring & Hibernate Configurations
-│   ├── controller/  # Web Mappings & Business Logic
-│   ├── dao/         # Data Access Objects (Hibernate)
-│   └── model/       # JPA Entities (Expense)
+│   ├── config/      # System & persistence configuration
+│   ├── controller/  # Request mapping and business orchestration
+│   ├── dao/         # Data access layer (Hibernate)
+│   └── model/       # Domain entities (Expense)
 ├── src/main/webapp/
-│   ├── WEB-INF/views/ # JSP Pages
-│   └── static/css/    # Stylesheets
-├── db/              # SQL Database Scripts
-└── pom.xml          # Maven Dependencies
+│   ├── WEB-INF/views/ # Dynamic JSP templates
+│   └── static/css/    # Modern stylesheets
+├── screenshots/     # Application previews
+├── db/              # SQL schema scripts
+└── pom.xml          # Dependency management
 ```
 
 ---
 
 ## 📜 License
-This project is for academic/mini-project purposes.
+Developed for academic excellence and personal financial tracking.
