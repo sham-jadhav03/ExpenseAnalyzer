@@ -16,11 +16,11 @@ import java.util.Map;
 @Transactional
 public class ExpenseDAOImpl implements ExpenseDAO {
 
-    @Autowired
-    private SessionFactory sessionFactory;
+    @jakarta.persistence.PersistenceContext
+    private jakarta.persistence.EntityManager entityManager;
 
     protected Session getSession() {
-        return sessionFactory.getCurrentSession();
+        return entityManager.unwrap(Session.class);
     }
 
     @Override

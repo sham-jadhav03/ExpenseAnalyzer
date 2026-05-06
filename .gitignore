@@ -1,1 +1,40 @@
 target/
+*.class
+
+# Log files
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.db
+
+# Virtual machines
+*.vmdk
+*.vbox
+*.vbox-prev
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configuration
+src/main/resources/application.properties
